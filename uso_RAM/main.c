@@ -10,7 +10,8 @@ int main() {
         return 1;
     }
 
-    unsigned long ram_free = (info.freeram * info.mem_unit) / (1024 * 1024 * 1024);
+    unsigned long ram_TOTAl = ((info.totalram * info.mem_unit) / (1024 * 1024 * 1024));
+    unsigned long ram_FREE = (info.freeram * info.mem_unit) / (1024 * 1024 * 1024);
 
-    printf("Memória RAM livre: %lu GB\n", ram_free);
+    printf("Memória RAM livre: %lu GB\n", (ram_TOTAl - ram_FREE));
 }
